@@ -6,33 +6,48 @@
 // I confirm that the content of this file is created by me,
 // with exception of the parts provided to me by my professor
 
-#ifndef W3_PAIR_H
-#define W3_PAIR_H
+#ifndef PAIR_H
+#define PAIR_H
+#include <string>
 
-//namespace w3 {
-    template<typename A = int, typename B = int>
-    class Pair {
-        A key;
-        B value;
+// helper functions for setting empty states
+template<typename T>
+T setEmpty(T& t) {
+    return 0;
+}
 
-        public:
-            // default constructor
-            Pair() : key(0), value(0) {};
-            
-            // constructor
-            Pair(const A& a, const B& b) {
-                key = a;
-                value = b;
-            }
+// specialized for strings
+template<>
+std::string setEmpty<std::string>(std::string& t) {
+    return "";
+}
 
-            const A& getKey() const {
-                return key;
-            }
+// Pair template class
+template<typename A = double, typename B = double>
+class Pair {
+    A key;
+    B value;
 
-            const B& getValue() const {
-                return value;
-            }
-    };
-//}
+    public:
+        // default constructor
+        Pair() {
+            // set safe empty states
+            key = setEmpty(key);
+            value = setEmpty(value);
+        };
 
-#endif W3_PAIR_H
+        // constructor
+        Pair(const A& a, const B& b) : key(a), value(b) {}
+
+        // return key
+        const A& getKey() const {
+            return key;
+        }
+
+        // return value
+        const B& getValue() const {
+            return value;
+        }
+};
+
+#endif //W3_PAIR_H
