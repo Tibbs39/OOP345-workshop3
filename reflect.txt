@@ -1,5 +1,4 @@
-This has refreshed me on how to create template functions.
-It has also taught me to create template classes. I've learned
+This workshop has taught me to create template classes. I've learned
 to consider the potential types could be used for the template
 variable of the template class, and how to handle safe empty
 states for them. 

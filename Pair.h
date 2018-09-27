@@ -10,31 +10,15 @@
 #define PAIR_H
 #include <string>
 
-// helper functions for setting empty states
-template<typename T>
-T setEmpty(T& t) {
-    return 0;
-}
-
-// specialized for strings
-template<>
-std::string setEmpty<std::string>(std::string& t) {
-    return "";
-}
-
 // Pair template class
-template<typename A = double, typename B = double>
+template<typename A = int, typename B = int>
 class Pair {
     A key;
     B value;
 
     public:
         // default constructor
-        Pair() {
-            // set safe empty states
-            key = setEmpty(key);
-            value = setEmpty(value);
-        };
+        Pair() {}
 
         // constructor
         Pair(const A& a, const B& b) : key(a), value(b) {}
