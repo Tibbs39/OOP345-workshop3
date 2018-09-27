@@ -50,4 +50,4 @@ class Pair {
         }
 };
 
-#endif //W3_PAIR_H
+#endif //PAIR_H

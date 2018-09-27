@@ -27,6 +27,7 @@ class List {
 
         // return element at index
         const T& operator[](int index) const {
+            // return blank if out of bounds
             return index < n ? array[index] : blank;
         }
 
@@ -41,4 +42,4 @@ class List {
         }
 };
 
-#endif //W3_LIST_H
+#endif //LIST_H
